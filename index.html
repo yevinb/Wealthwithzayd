@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wealth With Zayd — The System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Wealth With Zayd — The System | Old Money Wealth Framework</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-<!-- PayPal SDK -->
+<!-- PayPal SDK (correct placement, single instance) -->
 <script src="https://www.paypal.com/sdk/js?client-id=BAAvnGV9_bSR2BlLDXqQIssDPCgxxteK9vZpdopFQcIE50HX9v-Ri2_ZArcjSjfhsMMcpSVqWot3NJ5h5I&components=hosted-buttons&disable-funding=venmo&currency=GBP"></script>
 <style>
-  /* --- Your existing CSS (unchanged) --- */
+  /* --- Premium, refined aesthetic (unchanged layout but polished) --- */
   :root {
     --gold: #C9A84C;
     --gold-light: #E8C97A;
@@ -142,7 +142,7 @@
   .faq-item { border-bottom: 1px solid var(--border); overflow: hidden; }
   .faq-question { display: flex; align-items: center; justify-content: space-between; padding: 28px 0; font-size: 16px; font-weight: 600; color: var(--text); cursor: none; transition: color 0.3s; gap: 20px; }
   .faq-question:hover { color: var(--gold-light); }
-  .faq-toggle { width: 28px; height: 28px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.3s, border-color 0.3s; font-size: 18px; line-height: 1; color: var(--gold); }
+  .faq-toggle { width: 28px; height: 28px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.3s, border-color 0.3s; font-size: 18px; line-height: 1; color: var(--gold); background: transparent; cursor: none; }
   .faq-item.open .faq-toggle { background: var(--gold); color: var(--black); border-color: var(--gold); }
   .faq-answer { display: none; padding: 0 0 28px; font-size: 14px; line-height: 1.8; color: var(--muted); }
   .faq-item.open .faq-answer { display: block; }
@@ -193,7 +193,6 @@
 <section class="about">
   <div class="about-visual reveal">
     <div class="about-img-frame">
-      <!-- Zayd's image from the provided postimg link -->
       <img src="https://i.postimg.cc/NjdXQP05/659131480-17855119428689704-1775813684136953705-n.jpg" alt="Zayd - Wealth Educator">
       <div class="about-img-label"><div class="about-img-label-name">Zayd</div><div class="about-img-label-title">Wealth Educator & AI Influencer</div></div>
     </div>
@@ -219,7 +218,7 @@
     <div class="module-card reveal"><div class="module-num">07+</div><div class="module-icon"><svg viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="12" stroke="#C9A84C" stroke-width="1.5" stroke-dasharray="4 3"/><path d="M18 22l3 3 6-6" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="module-title">16 More Modules</div><div class="module-desc">Negotiation, Deal-Making, International Tax Structures, Business Acquisition, Wealth Tracking, Crisis-Proof Assets & more.</div><div class="module-tag">Full Access</div></div>
   </div>
 </section>
-<!-- rebuild trigger -->
+
 <section class="pricing" id="enroll">
   <div class="pricing-header"><div class="section-label reveal" style="justify-content:center"><div class="section-label-line"></div><div class="section-label-text">Enroll Today</div><div class="section-label-line"></div></div><h2 class="section-title reveal">One price.<br><em>Lifetime access.</em></h2></div>
   <div class="pricing-card reveal">
@@ -236,17 +235,28 @@
       <li><div class="pricing-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Gulf dynasty generational wealth transfer principles</li>
       <li><div class="pricing-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Lifetime access — download everything, keep forever</li>
     </ul>
-    <div class="paypal-hosted-container"><div id="paypal-container-CBJWUJPNUF8UC"></div></div>
+    <!-- PayPal Hosted Button Container: exactly as requested with script integration -->
+    <div class="paypal-hosted-container">
+      <div id="paypal-container-CBJWUJPNUF8UC"></div>
+    </div>
     <script>
-      if (typeof paypal !== 'undefined' && paypal.HostedButtons) {
-        paypal.HostedButtons({ hostedButtonId: "CBJWUJPNUF8UC" }).render("#paypal-container-CBJWUJPNUF8UC");
-      } else {
-        window.addEventListener('load', function() {
-          if (window.paypal && paypal.HostedButtons) {
-            paypal.HostedButtons({ hostedButtonId: "CBJWUJPNUF8UC" }).render("#paypal-container-CBJWUJPNUF8UC");
+      (function() {
+        function renderPayPalButton() {
+          if (typeof paypal !== 'undefined' && paypal.HostedButtons) {
+            paypal.HostedButtons({
+              hostedButtonId: "CBJWUJPNUF8UC"
+            }).render("#paypal-container-CBJWUJPNUF8UC");
+          } else {
+            // if PayPal SDK not loaded yet, wait a bit
+            window.addEventListener('load', function() {
+              if (window.paypal && paypal.HostedButtons) {
+                paypal.HostedButtons({ hostedButtonId: "CBJWUJPNUF8UC" }).render("#paypal-container-CBJWUJPNUF8UC");
+              }
+            });
           }
-        });
-      }
+        }
+        renderPayPalButton();
+      })();
     </script>
     <p class="pricing-guarantee">🔒 Secure checkout via PayPal · Instant delivery to your email</p>
   </div>
@@ -261,7 +271,7 @@
 <footer><div class="nav-logo">Wealth <span>with</span> Zayd</div><div class="footer-links"><a href="#">Instagram</a><a href="#">Privacy Policy</a><a href="#">Terms</a><a href="#">Contact</a></div><div class="footer-copy">© 2026 Wealth With Zayd. All rights reserved.</div></footer>
 
 <script>
-  // Custom cursor
+  // Custom cursor animation
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursorRing');
   let mx = 0, my = 0, rx = 0, ry = 0;
@@ -269,13 +279,27 @@
   function animateCursor() { cursor.style.left = mx + 'px'; cursor.style.top = my + 'px'; rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12; ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; requestAnimationFrame(animateCursor); }
   animateCursor();
 
-  // Scroll reveal
+  // Intersection Observer for scroll reveals
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } }); }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   reveals.forEach(el => observer.observe(el));
 
-  // FAQ toggle
-  function toggleFaq(el) { const item = el.parentElement; const isOpen = item.classList.contains('open'); document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-toggle').textContent = '+'; }); if (!isOpen) { item.classList.add('open'); el.querySelector('.faq-toggle').textContent = '−'; } }
+  // FAQ toggle logic (robust)
+  window.toggleFaq = function(element) {
+    const item = element.closest('.faq-item');
+    if (!item) return;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      const toggleSpan = i.querySelector('.faq-toggle');
+      if (toggleSpan) toggleSpan.textContent = '+';
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      const toggleSpan = item.querySelector('.faq-toggle');
+      if (toggleSpan) toggleSpan.textContent = '−';
+    }
+  };
 </script>
 </body>
 </html>
