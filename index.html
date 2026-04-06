@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Wealth With Zayd — The System | Old Money Wealth Framework</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wealth With Zayd — The System</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-<!-- PayPal SDK (correct placement, single instance) -->
+<!-- PayPal SDK -->
 <script src="https://www.paypal.com/sdk/js?client-id=BAAvnGV9_bSR2BlLDXqQIssDPCgxxteK9vZpdopFQcIE50HX9v-Ri2_ZArcjSjfhsMMcpSVqWot3NJ5h5I&components=hosted-buttons&disable-funding=venmo&currency=GBP"></script>
 <style>
-  /* --- Premium, refined aesthetic (unchanged layout but polished) --- */
+  /* --- Your existing CSS (unchanged) --- */
   :root {
     --gold: #C9A84C;
     --gold-light: #E8C97A;
@@ -142,7 +142,7 @@
   .faq-item { border-bottom: 1px solid var(--border); overflow: hidden; }
   .faq-question { display: flex; align-items: center; justify-content: space-between; padding: 28px 0; font-size: 16px; font-weight: 600; color: var(--text); cursor: none; transition: color 0.3s; gap: 20px; }
   .faq-question:hover { color: var(--gold-light); }
-  .faq-toggle { width: 28px; height: 28px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.3s, border-color 0.3s; font-size: 18px; line-height: 1; color: var(--gold); background: transparent; cursor: none; }
+  .faq-toggle { width: 28px; height: 28px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.3s, border-color 0.3s; font-size: 18px; line-height: 1; color: var(--gold); }
   .faq-item.open .faq-toggle { background: var(--gold); color: var(--black); border-color: var(--gold); }
   .faq-answer { display: none; padding: 0 0 28px; font-size: 14px; line-height: 1.8; color: var(--muted); }
   .faq-item.open .faq-answer { display: block; }
@@ -156,13 +156,74 @@
   .footer-links a { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.3s; }
   .footer-links a:hover { color: var(--gold); }
   .footer-copy { font-family: 'DM Mono', monospace; font-size: 11px; color: rgba(232,224,208,0.25); letter-spacing: 0.08em; }
+  
+  /* Free Preview Section Styles */
+  .free-preview {
+    background: var(--surface);
+    text-align: center;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .preview-card {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--deep);
+    border: 1px solid var(--border);
+    padding: 48px 56px;
+    position: relative;
+  }
+  .preview-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+  .preview-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--gold-light);
+    margin-bottom: 16px;
+  }
+  .preview-desc {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--muted);
+    margin-bottom: 28px;
+  }
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: transparent;
+    color: var(--gold);
+    padding: 14px 32px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--gold);
+    transition: all 0.3s;
+    cursor: none;
+  }
+  .btn-secondary:hover {
+    background: var(--gold);
+    color: var(--black);
+    border-color: var(--gold);
+  }
+  .preview-note {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 20px;
+    opacity: 0.6;
+  }
+  
   @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .reveal.visible { opacity: 1; transform: none; }
   .reveal-delay-1 { transition-delay: 0.1s; }
   .reveal-delay-2 { transition-delay: 0.2s; }
-  @media (max-width: 1024px) { nav { padding: 20px 30px; } section { padding: 80px 30px; } .hero { padding: 100px 30px 80px; } .about { grid-template-columns: 1fr; gap: 60px; } .about-visual { max-width: 400px; } .modules-grid { grid-template-columns: 1fr 1fr; } .testimonials-grid { grid-template-columns: 1fr; gap: 2px; } .faq-grid { grid-template-columns: 1fr; gap: 60px; } .faq-intro { position: static; } .hero-stats { display: none; } .final-cta { padding: 80px 30px; } footer { padding: 40px 30px; } }
+  @media (max-width: 1024px) { nav { padding: 20px 30px; } section { padding: 80px 30px; } .hero { padding: 100px 30px 80px; } .about { grid-template-columns: 1fr; gap: 60px; } .about-visual { max-width: 400px; } .modules-grid { grid-template-columns: 1fr 1fr; } .testimonials-grid { grid-template-columns: 1fr; gap: 2px; } .faq-grid { grid-template-columns: 1fr; gap: 60px; } .faq-intro { position: static; } .hero-stats { display: none; } .final-cta { padding: 80px 30px; } footer { padding: 40px 30px; } .preview-card { padding: 32px 28px; } }
   @media (max-width: 640px) { .modules-grid { grid-template-columns: 1fr; } .about-metrics { grid-template-columns: 1fr 1fr; } .pricing-card { padding: 40px 28px; } .hero-actions { flex-direction: column; align-items: flex-start; gap: 20px; } .modules-header { flex-direction: column; align-items: flex-start; } footer { flex-direction: column; gap: 20px; } .footer-links { flex-wrap: wrap; gap: 20px; } }
 </style>
 </head>
@@ -219,6 +280,20 @@
   </div>
 </section>
 
+<!-- NEW FREE PREVIEW SECTION -->
+<section class="free-preview">
+  <div class="preview-card reveal">
+    <div class="preview-icon">📖</div>
+    <div class="preview-title">Try Before You Buy</div>
+    <div class="preview-desc">Get a free sample of The Wealth Systems Playbook. See the quality, depth, and precision before you decide.</div>
+    <a class="btn-secondary" href="https://drive.google.com/uc?export=download&id=184aMSNK8Inne83s_IirEdLh9l6MRxeRB">
+      <span>Download Free Preview</span>
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <div class="preview-note">Free sample · Limited pages · No email required</div>
+  </div>
+</section>
+
 <section class="pricing" id="enroll">
   <div class="pricing-header"><div class="section-label reveal" style="justify-content:center"><div class="section-label-line"></div><div class="section-label-text">Enroll Today</div><div class="section-label-line"></div></div><h2 class="section-title reveal">One price.<br><em>Lifetime access.</em></h2></div>
   <div class="pricing-card reveal">
@@ -235,28 +310,17 @@
       <li><div class="pricing-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Gulf dynasty generational wealth transfer principles</li>
       <li><div class="pricing-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Lifetime access — download everything, keep forever</li>
     </ul>
-    <!-- PayPal Hosted Button Container: exactly as requested with script integration -->
-    <div class="paypal-hosted-container">
-      <div id="paypal-container-CBJWUJPNUF8UC"></div>
-    </div>
+    <div class="paypal-hosted-container"><div id="paypal-container-CBJWUJPNUF8UC"></div></div>
     <script>
-      (function() {
-        function renderPayPalButton() {
-          if (typeof paypal !== 'undefined' && paypal.HostedButtons) {
-            paypal.HostedButtons({
-              hostedButtonId: "CBJWUJPNUF8UC"
-            }).render("#paypal-container-CBJWUJPNUF8UC");
-          } else {
-            // if PayPal SDK not loaded yet, wait a bit
-            window.addEventListener('load', function() {
-              if (window.paypal && paypal.HostedButtons) {
-                paypal.HostedButtons({ hostedButtonId: "CBJWUJPNUF8UC" }).render("#paypal-container-CBJWUJPNUF8UC");
-              }
-            });
+      if (typeof paypal !== 'undefined' && paypal.HostedButtons) {
+        paypal.HostedButtons({ hostedButtonId: "CBJWUJPNUF8UC" }).render("#paypal-container-CBJWUJPNUF8UC");
+      } else {
+        window.addEventListener('load', function() {
+          if (window.paypal && paypal.HostedButtons) {
+            paypal.HostedButtons({ hostedButtonId: "CBJWUJPNUF8UC" }).render("#paypal-container-CBJWUJPNUF8UC");
           }
-        }
-        renderPayPalButton();
-      })();
+        });
+      }
     </script>
     <p class="pricing-guarantee">🔒 Secure checkout via PayPal · Instant delivery to your email</p>
   </div>
@@ -271,7 +335,6 @@
 <footer><div class="nav-logo">Wealth <span>with</span> Zayd</div><div class="footer-links"><a href="#">Instagram</a><a href="#">Privacy Policy</a><a href="#">Terms</a><a href="#">Contact</a></div><div class="footer-copy">© 2026 Wealth With Zayd. All rights reserved.</div></footer>
 
 <script>
-  // Custom cursor animation
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursorRing');
   let mx = 0, my = 0, rx = 0, ry = 0;
@@ -279,27 +342,11 @@
   function animateCursor() { cursor.style.left = mx + 'px'; cursor.style.top = my + 'px'; rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12; ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; requestAnimationFrame(animateCursor); }
   animateCursor();
 
-  // Intersection Observer for scroll reveals
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } }); }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   reveals.forEach(el => observer.observe(el));
 
-  // FAQ toggle logic (robust)
-  window.toggleFaq = function(element) {
-    const item = element.closest('.faq-item');
-    if (!item) return;
-    const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(i => {
-      i.classList.remove('open');
-      const toggleSpan = i.querySelector('.faq-toggle');
-      if (toggleSpan) toggleSpan.textContent = '+';
-    });
-    if (!isOpen) {
-      item.classList.add('open');
-      const toggleSpan = item.querySelector('.faq-toggle');
-      if (toggleSpan) toggleSpan.textContent = '−';
-    }
-  };
+  function toggleFaq(el) { const item = el.parentElement; const isOpen = item.classList.contains('open'); document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-toggle').textContent = '+'; }); if (!isOpen) { item.classList.add('open'); el.querySelector('.faq-toggle').textContent = '−'; } }
 </script>
 </body>
 </html>
